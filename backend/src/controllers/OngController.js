@@ -7,7 +7,6 @@ module.exports = {
 
     return res.json(ongs);
   },
-
   async store(req, res) {
     const { name, email, whatsapp, city, uf } = req.body;
 
