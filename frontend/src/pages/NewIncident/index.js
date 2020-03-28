@@ -1,22 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
+import { Form } from '@unform/web';
+import { useAlert } from 'react-alert';
 
-import './styles.css';
+import Input from '~/components/Input';
 
 import Logo from '~/assets/logo.svg';
 import api from '~/services/api';
 
-export default function NewIncident() {
-  const [title, setTitle] = useState('');
-  const [description, setdescription] = useState('');
-  const [value, setValue] = useState('');
+import { Container, Content } from './styles';
 
+export default function NewIncident() {
+  const formRef = useRef(null);
   const history = useHistory();
+  const alert = useAlert();
   const ongId = localStorage.getItem('ongId');
 
-  async function handleSubmit(env) {
-    env.preventDefault();
+  const [titleError, setTitleError] = useState(false);
+  const [descriptionError, setDescription] = useState(false);
+  const [valueError, setValueError] = useState(false);
+
+  async function handleSubmit({ title, description, value }) {
+    if (title === '') {
+      setTitleError(true);
+      return;
+    }
+    setTitleError(false);
+
+    if (description === '') {
+      setDescription(true);
+      return;
+    }
+    setDescription(false);
+
+    if (value === '') {
+      setValueError(true);
+      return;
+    }
+    setValueError(false);
+
     try {
       await api.post(
         'incidents',
@@ -32,13 +55,15 @@ export default function NewIncident() {
         }
       );
       history.push('/profile');
+      alert.success(`Incidente: ${title} \n \n Inserido com sucesso!`);
     } catch (error) {
-      alert('Error ao cadastrar caso');
+      alert.error('Error ao cadastrar caso');
     }
   }
+
   return (
-    <div className="new-incident-container">
-      <div className="content">
+    <Container>
+      <Content>
         <section>
           <img src={Logo} alt="main-logo" />
           <h1>Cadastrar novo caso</h1>
@@ -52,31 +77,32 @@ export default function NewIncident() {
           </Link>
         </section>
 
-        <form onSubmit={handleSubmit}>
-          <input
+        <Form ref={formRef} onSubmit={handleSubmit}>
+          <Input
             type="text"
             placeholder="Titulo do Caso"
-            value={title}
-            onChange={(env) => setTitle(env.target.value)}
+            name="title"
+            error={titleError}
           />
-          <textarea
+          <Input
+            multiline
             type="text"
             placeholder="Descrição"
-            value={description}
-            onChange={(env) => setdescription(env.target.value)}
+            name="description"
+            error={descriptionError}
           />
-          <input
+          <Input
             type="text"
             placeholder="Valor em reais"
-            value={value}
-            onChange={(env) => setValue(env.target.value)}
+            name="value"
+            error={valueError}
           />
 
           <button type="submit" className="button">
             Cadastrar
           </button>
-        </form>
-      </div>
-    </div>
+        </Form>
+      </Content>
+    </Container>
   );
 }
