@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Fastfeet" title="Fastfeet" src="./src/assets/logo.svg" width="300px" />
+  <img alt="BeTheHero" title="BeTheHero" src="./src/assets/logo.svg" width="300px" />
 </h1>
 
 <h3 align="center">
@@ -110,4 +110,4 @@ npm start
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE.md](https://github.com/tavareshenrique/be-the-heroblob/master/LICENSE.md) para obter detalhes.
+Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE.md](https://github.com/tavareshenrique/be-the-hero/blob/master/frontend/LICENSE.md) para obter detalhes.
