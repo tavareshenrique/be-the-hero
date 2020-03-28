@@ -1,49 +1,75 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
+import { Form } from '@unform/web';
+import { useAlert } from 'react-alert';
 
-import './styles.css';
+import Input from '~/components/Input';
 
 import api from '~/services/api';
 
 import logoImg from '~/assets/logo.svg';
 
+import { Container, Content, Section, InputGroup } from './styles';
+
 export default function Register() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [city, setCity] = useState('');
-  const [uf, setUf] = useState('');
-
+  const formRef = useRef(null);
   const history = useHistory();
+  const alert = useAlert();
 
-  async function handleRegister(e) {
-    e.preventDefault();
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [whatsappError, setWhatsppError] = useState(false);
+  const [cityError, setCityError] = useState(false);
+  const [ufError, setUfError] = useState(false);
 
-    const data = {
+  async function handleRegister({ name, email, whatsapp, city, uf }) {
+    if (name === '') {
+      setNameError(true);
+      return;
+    }
+    setNameError(false);
+
+    if (email === '') {
+      setEmailError(true);
+      return;
+    }
+    setEmailError(false);
+
+    if (whatsapp === '') {
+      setWhatsppError(true);
+      return;
+    }
+    setWhatsppError(false);
+
+    if (city === '') {
+      setCityError(true);
+      return;
+    }
+    setCityError(false);
+
+    if (uf === '') {
+      setUfError(true);
+      return;
+    }
+    setUfError(true);
+
+    const response = await api.post('/ongs', {
       name,
       email,
       whatsapp,
       city,
       uf,
-    };
+    });
 
-    try {
-      const response = await api.post('/ongs', data);
-
-      alert(`Seu ID de acesso: ${response.data.id}`);
-
-      history.push('/');
-    } catch (err) {
-      console.log(err);
-      alert('Erro no cadastro, tente novamente');
-    }
+    alert.success(`Seu ID de acesso: ${response.data.id}`);
+    history.push('/');
   }
 
   return (
-    <div className="register-container">
-      <div className="content">
-        <section>
+    <Container>
+      <Content>
+        <Section>
           <img src={logoImg} alt="Be The Hero" />
           <h1>Cadastro</h1>
           <p>
@@ -55,44 +81,32 @@ export default function Register() {
             <FiArrowLeft size={16} color="#e02041" />
             Já possuo cadastro
           </Link>
-        </section>
+        </Section>
 
-        <form onSubmit={handleRegister}>
-          <input
-            placeholder="Nome da ONG"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
+        <Form ref={formRef} onSubmit={handleRegister}>
+          <Input placeholder="Nome da ONG" name="name" error={nameError} />
+          <Input
             type="email"
             placeholder="E-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            error={emailError}
           />
-          <input
-            placeholder="WhatsApp"
-            value={whatsapp}
-            onChange={(e) => setWhatsapp(e.target.value)}
-          />
-          <div className="input-group">
-            <input
-              placeholder="Cidade"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-            />
-            <input
+          <Input placeholder="WhatsApp" name="whatsapp" error={whatsappError} />
+          <InputGroup>
+            <Input placeholder="Cidade" name="city" error={cityError} />
+            <Input
               placeholder="UF"
+              name="uf"
+              error={ufError}
               style={{ width: 80 }}
-              value={uf}
-              onChange={(e) => setUf(e.target.value)}
             />
-          </div>
+          </InputGroup>
 
           <button className="button" type="submit">
             Cadastrar
           </button>
-        </form>
-      </div>
-    </div>
+        </Form>
+      </Content>
+    </Container>
   );
 }
