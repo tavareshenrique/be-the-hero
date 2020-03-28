@@ -1,6 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
+import { createGlobalStyle } from 'styled-components';
 
-* {
+import 'react-toastify/dist/ReactToastify.css';
+
+export default createGlobalStyle`
+  * {
   margin: 0;
   padding: 0;
   outline: 0;
@@ -10,18 +13,18 @@
 body {
   font: 400 14px Roboto, sans-serif;
   background: #f0f0f5;
-  /*Melhora as bordas das fonts, objetos e imagens*/
+
   -webkit-font-smoothing: antialiased;
 }
 
-/*Setando a mesma font para esses campos, pois por padrão a font não carrega*/
+
 input,
 button,
 textarea {
   font: 400 18px Roboto, sans-serif;
 }
 
-/*O cursor do mouse mudará para uma mãozinha ao sobrepor todos botões*/
+
 button {
   cursor: pointer;
 }
@@ -85,3 +88,4 @@ form textarea {
 .back-link svg {
   margin-right: 8px;
 }
+`;
