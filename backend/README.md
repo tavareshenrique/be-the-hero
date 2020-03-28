@@ -12,17 +12,17 @@
 
 ## Conteúdo
 
-- [Session](#session)
-  - [Criando Sessão](#criando-sessao)
+- [Sessão](#sessão)
+  - [Criando Sessão](#criando-sessão)
 - [ONG](#ong)
-  - [List](#listando-ongs)
+  - [Listando](#listando-ongs)
   - [Incluindo](#incluindo-ong)
-- [Profile](#perfil)
+- [Perfil](#perfil)
   - [Listando](#listando-perfil)
 - [Incidentes](#incidentes)
   - [Listando](#listando-incidentes)
-  - [Incluindo](#incluindo-incidentes)
-  - [Deletando](#deletando-incidentes)
+  - [Incluindo](#incluindo-incidente)
+  - [Deletando](#deletando-incidente)
 
 ---
 
