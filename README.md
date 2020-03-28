@@ -9,13 +9,13 @@
 ---
 
 <h1>
-  <a href="https://github.com/tavareshenrique/be-the-hero/tree/master/frontend" style="text-decoration: none;" >
+  <a href="https://github.com/tavareshenrique/be-the-hero/tree/master/backend" style="text-decoration: none;" >
   💾 Back-End (NodeJS) ✅
   </a>
 </h1>
 
 <h1>
-   <a href="https://github.com/tavareshenrique/be-the-hero/tree/master/backend" style="text-decoration: none;">
+   <a href="https://github.com/tavareshenrique/be-the-hero/tree/master/frontend" style="text-decoration: none;">
   ⚛️ Front-End (ReactJS) ✅
   </a>
 </h1>
