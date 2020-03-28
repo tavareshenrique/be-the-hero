@@ -26,7 +26,7 @@
   </a>
 </h1>
 
-## Author
+## Autor
 
 <table>
   <tr>

@@ -10,27 +10,27 @@
 
 <div align="center"><a href="https://insomnia.rest/run/?label=Be%20The%20Hero&uri=https%3A%2F%2Fraw.githubusercontent.com%2Ftavareshenrique%2Fbe-the-hero%2Fmaster%2Fbackend%2Finsomnia%2Fexport.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a></div>
 
-## Content
+## Conteúdo
 
 - [Session](#session)
-  - [Store](#store-session)
-- [Ong](#ong)
-  - [List](#list-ongs)
-  - [Store](#store-ong)
-- [Profile](#profile)
-  - [List](#list-profile)
-- [Incident](#incident)
-  - [List](#list-incidents)
-  - [Store](#store-incident)
-  - [Delete](#delete-incident)
+  - [Criando Sessão](#criando-sessao)
+- [ONG](#ong)
+  - [List](#listando-ongs)
+  - [Incluindo](#incluindo-ong)
+- [Profile](#perfil)
+  - [Listando](#listando-perfil)
+- [Incidentes](#incidentes)
+  - [Listando](#listando-incidentes)
+  - [Incluindo](#incluindo-incidentes)
+  - [Deletando](#deletando-incidentes)
 
 ---
 
-# Session
+# Sessão
 
-## **Store** Session
+## **Criando** Sessão
 
-Start a session.
+Iniciando Sessão
 
 * **URL**
 
@@ -69,9 +69,9 @@ Start a session.
 
 # ONG
 
-## **List** ONG's
+## **Listando** ONG's
 
-ListAll ONG's.
+Listando todas ONG's
 
 * **URL**
 
@@ -115,9 +115,9 @@ ListAll ONG's.
 
 ---
 
-## **Store** ONG
+## **Incluindo** ONG
 
-Create a ONG.
+Cadastrando ONG.
 
 * **URL**
 
@@ -157,11 +157,11 @@ Create a ONG.
     }
     ```
 
-# Profile
+# Perfil
 
-## **List** Profile
+## **Listando** Perfil
 
-List the cases of an ONG
+Listando casos da ONG.
 
 * **URL**
 
@@ -208,11 +208,11 @@ List the cases of an ONG
 
 ---
 
-# Incidents
+# Incidentes
 
-## **List** Incidents
+## **Listando** Incidentes
 
-ListAll Incident's
+Listando todos incidentes.
 
 * **URL**
 
@@ -260,9 +260,9 @@ ListAll Incident's
 
 ---
 
-## **Store** Incident
+## **Incluindo** Incidente
 
-Create a incident.
+CIncluindo Incidente.
 
 * **URL**
 
@@ -305,9 +305,9 @@ Create a incident.
 
 ---
 
-## **Delete** Incident
+## **Deletando** Incidente
 
-Delete Incident.
+Deletando Incidente.
 
 * **URL**
 
@@ -338,7 +338,7 @@ Delete Incident.
 
 ---
 
-## Built with
+## Tecnologias
 
 - [Express](https://expressjs.com/pt-br/)
 - [Nodemon](https://nodemon.io/)
@@ -350,7 +350,7 @@ Delete Incident.
 
 ---
 
-## Author
+## Autor
 
 <table>
   <tr>

@@ -22,57 +22,35 @@
 
 Clone o repositório:
 
-```
+```bash
 git clone https://github.com/tavareshenrique/be-the-hero.git
 ```
 
-Acesse a pasta frontend, em seu terminal digite:
-
-```
+```bash
+# Acesse a pasta frontend, em seu terminal digite:
 cd frontend
-```
 
-Instale as dependencias
-
-```
+# Instale as dependencias
 yarn
-```
-
-ou
-
-```
+# ou
 npm install
-```
 
-Execute o Back-End do Be The Hero antes de iniciar o Front-End
-
-```
+# Execute o Back-End do Be The Hero antes de iniciar o Front-End
 https://github.com/tavareshenrique/be-the-hero/tree/master/backend
-```
 
-ou
-
-```
+# ou apenas acesse a pasta backend desse repoditório
 cd backend
-```
 
-```
+# instale as dependências dela e excute a mesma
 yarn && yarn dev
-```
 
-Execute o Front-End do Be The Hero
-
-```
+#Execute o Front-End do Be The Hero
 yarn start
-```
-
-ou
-
-```
+# ou
 npm start
 ```
 
-## Construído com
+## Tecnologias
 
 - [ReactJS](https://pt-br.reactjs.org/)
 - [React Hooks](https://pt-br.reactjs.org/docs/hooks-intro.html)
@@ -90,7 +68,7 @@ npm start
 - [Prettier](https://prettier.io/)
 - [React App Rewired](https://github.com/timarney/react-app-rewired)
 
-## Author
+## Autor
 
 <table>
   <tr>
