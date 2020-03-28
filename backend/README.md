@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-  O <strong>Be The Hero</strong> é um projeto resultado da Semana Omnistack 11. Essa aplicação foi construida utilizando NodeJS, ReactJS e React Native. O <strong>Be The Hero</strong> trata-se de uma aplicação cujo o objetivo é para que ONG's possam cadastrar casos para que pessoas possam viar a se solidariazar com o caso e ajudar contribuindo.
+  O <strong>Be The Hero</strong> é um projeto resultado da Semana Omnistack 11. Essa aplicação foi construida utilizando NodeJS. O <strong>Be The Hero</strong> trata-se de uma aplicação cujo o objetivo é para que ONG's possam cadastrar casos para que pessoas possam viar a se solidariazar com o caso e ajudar contribuindo.
 </h3>
 
 ---
