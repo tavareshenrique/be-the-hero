@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiPower, FiTrash2 } from 'react-icons/fi';
-import logoImg from '../../assets/logo.svg';
+import { useAlert } from 'react-alert';
+
 import api from '../../services/api';
-import './styles.css';
+
+import logoImg from '../../assets/logo.svg';
+
+import { Container, Header } from './styles';
 
 export default function Profile() {
-  const [incidents, setIncidents] = useState([]);
-
+  const history = useHistory();
+  const alert = useAlert();
   const ongName = localStorage.getItem('ongName');
   const ongId = localStorage.getItem('ongId');
 
-  const history = useHistory();
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     api
@@ -19,7 +23,7 @@ export default function Profile() {
         headers: { Authorization: ongId },
       })
       .then((response) => {
-        setIncidents(response.data);
+        setData(response.data);
       });
   }, [ongId]);
 
@@ -31,9 +35,9 @@ export default function Profile() {
         },
       });
 
-      setIncidents(incidents.filter((incident) => incident.id !== id));
+      setData(data.filter((incident) => incident.id !== id));
     } catch (err) {
-      alert('Erro ao deletar o caso');
+      alert.error('Error ao deletar caso');
     }
   }
 
@@ -41,9 +45,10 @@ export default function Profile() {
     localStorage.clear();
     history.push('/');
   }
+
   return (
-    <div className="profile-container">
-      <header>
+    <Container>
+      <Header>
         <img src={logoImg} alt="Be The Hero" />
         <span>Bem vinda, {ongName}</span>
 
@@ -54,12 +59,12 @@ export default function Profile() {
         <button type="button" onClick={handleLogout}>
           <FiPower size={18} color="#e02041" />
         </button>
-      </header>
+      </Header>
 
       <h1> Casos cadastrados</h1>
 
       <ul>
-        {incidents.map((incident) => (
+        {data.map((incident) => (
           <li key={incident.id}>
             <strong>CASO:</strong>
             <p>{incident.title}</p>
@@ -84,6 +89,6 @@ export default function Profile() {
           </li>
         ))}
       </ul>
-    </div>
+    </Container>
   );
 }
