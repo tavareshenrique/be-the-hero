@@ -25,6 +25,12 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "compilerOptions": {
+      "baseUrl": "src",
+      "paths": {
+        "~/*": ["*"]
+      }
     }
   }
 }
