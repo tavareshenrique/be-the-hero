@@ -8,7 +8,9 @@
 
 ---
 
-![Demonstração](./assets/demonstration.gif)
+<h1 align="center">
+  <img alt="Demonstration" title="Demonstration" src="assets/demonstration.gif" width="200px" />
+</h1>
 
 ---
 
