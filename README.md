@@ -9,7 +9,7 @@
 ---
 
 <h3 align="center">
-  🚨 * Atenção: Em cada pasta existe uma documentação específica, acesse as mesmas abaixo: ⬇️ * 🚨
+  ⚠️ Para cada uma das pastas(backend, frontend, mobile) existentes nesse repo, existe uma documentação específica dentro de cada uma. ⚠️
 </h3>
 
 ---
