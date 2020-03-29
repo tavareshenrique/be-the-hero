@@ -20,7 +20,7 @@ routes.post(
         'string.email': `Email inválido`,
         'any.required': `Email é um campo requerido`,
       }),
-      whatsapp: Joi.string().required().min(10).max(11),
+      whatsapp: Joi.string().required().min(13).max(17),
       city: Joi.string().required(),
       uf: Joi.string().required().length(2),
     }),
