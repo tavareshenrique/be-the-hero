@@ -9,7 +9,7 @@
 ---
 
 <h1 align="center">
-  <img alt="BeTheHero" title="BeTheHero" src="/assets/demonstration.gif" width="200px" />
+  <img alt="Demonstration" title="Demonstration" src="/assets/demonstration.gif" width="200px" />
 </h1>
 
 ---
