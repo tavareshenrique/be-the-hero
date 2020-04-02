@@ -31,7 +31,7 @@ yarn
 # ou
 npm install
 
-# Execute o Back-End do Be The Hero antes de iniciar o Front-End
+# Execute o Back-End do Be The Hero antes de iniciar o Mobile
 https://github.com/tavareshenrique/be-the-hero/tree/master/backend
 
 # ou apenas acesse a pasta backend desse repoditório
